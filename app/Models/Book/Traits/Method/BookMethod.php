@@ -11,11 +11,10 @@ trait BookMethod{
         $total_ratings = 0;
         $total_reviews = 0;
 
-        if(isset($review->message)){
-            $total_reviews +=1;
-        }
-
         foreach($reviews as $review){
+            if(isset($review->message)){
+                $total_reviews +=1;
+            }
             $total_ratings += $review->rating;
         }
 
